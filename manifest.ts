@@ -2,7 +2,7 @@ import packageJson from "./package.json";
 
 const manifest: chrome.runtime.ManifestV3 = {
   manifest_version: 3,
-  name: packageJson.name,
+  name: 'Some cool extension name',
   version: packageJson.version,
   description: packageJson.description,
   options_page: "src/pages/options/index.html",
@@ -10,9 +10,6 @@ const manifest: chrome.runtime.ManifestV3 = {
   action: {
     default_popup: "src/pages/popup/index.html",
     default_icon: "icon-34.png",
-  },
-  chrome_url_overrides: {
-    newtab: "src/pages/newtab/index.html",
   },
   icons: {
     "128": "icon-128.png",
@@ -23,6 +20,9 @@ const manifest: chrome.runtime.ManifestV3 = {
       js: ["src/pages/content/index.js"],
       css: ["assets/css/contentStyle.chunk.css"],
     },
+  ],
+  permissions: [
+    "activeTab"
   ],
   devtools_page: "src/pages/devtools/index.html",
   web_accessible_resources: [

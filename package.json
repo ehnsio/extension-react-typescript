@@ -1,5 +1,5 @@
 {
-  "name": "chrome-extension-boilerplate-react-vite",
+  "name": "chrome-feedback-extension",
   "version": "0.0.1",
   "description": "chrome extension boilerplate",
   "license": "MIT",
@@ -9,6 +9,7 @@
   },
   "scripts": {
     "build": "tsc --noEmit && vite build",
+    "watch": "tsc --noEmit && vite build --watch",
     "build:hmr": "rollup --config utils/reload/rollup.config.ts",
     "wss": "node utils/reload/initReloadServer.js",
     "dev": "npm run build:hmr && (run-p wss dev:nodemon)",
